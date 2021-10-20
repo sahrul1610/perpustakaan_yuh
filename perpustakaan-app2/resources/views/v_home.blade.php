@@ -1,6 +1,6 @@
 @extends('Layout.v_template')
 @section('title','Home')
-
+@section("content")
 <div class="row">
     <div class="col-lg-3 col-xs-6">
       <!-- small box -->

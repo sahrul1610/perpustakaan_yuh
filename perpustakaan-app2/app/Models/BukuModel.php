@@ -8,12 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class BukuModel extends Model
 {
-    public function allData()
-    {
-        return DB::table('buku')->get();
-    }
+    protected $table = "buku";
 
-    public function detailData($kode_buku){
-       return DB::table('buku')->where('kode_buku', $kode_buku)->first();
-    }
+    protected $guarded = [''];
+
+    public $timestamps = false;
 }

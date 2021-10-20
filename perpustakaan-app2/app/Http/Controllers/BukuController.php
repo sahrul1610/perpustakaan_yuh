@@ -7,22 +7,12 @@ use App\Models\BukuModel;
 
 class BukuController extends Controller
 {
-    public function __construct(){
-        $this->BukuModel = new BukuModel();
-    }
-    public function index(){
-        $data =[
-            'buku' => $this->BukuModel->allData(),
+    public function index()
+    {
+        $data = [
+            "buku" => BukuModel::get();
         ];
-        return view('v_buku', $data);
-    }
-    public function detail($kode_buku){
-        if (!$this->BukuModel->detailData($kode_buku)) {
-            abort(404);
-        }
-        $data =[
-            'buku' => $this->BukuModel->detailData($kode_buku),
-        ];
-        return view('v_detailbuku', $data);
+
+        return view("v_buku", $data);
     }
 }
